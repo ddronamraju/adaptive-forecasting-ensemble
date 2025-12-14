@@ -91,6 +91,18 @@ The resulting segments can be used to:
 - Calibrate safety stock levels differently by segment.
 - Prioritize SKUs for promotion, markdown, or assortment review.
 
+## 7. Feature Engineering Toolkit
+
+A reusable feature engineering layer was created to standardize model inputs across the system.
+It includes lag features, leakage-safe rolling statistics, holiday proximity indicators, YoY change,
+and Fourier terms to capture seasonality for boosting models.
+
+This layer is designed to be production-compatible:
+- leakage-safe transformations (shifted rolling windows)
+- reusable function interface
+- persistence to Parquet for downstream batch scoring and training
+
+
 ## 4. Additional Modules
 
 Short descriptions of:
